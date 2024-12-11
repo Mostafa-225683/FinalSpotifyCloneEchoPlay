@@ -1,0 +1,218 @@
+/* !Fonts */
+@font-face {
+  font-family: "robBold";
+  src: url(/src/assets/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+/* !Global Content  */
+:root {
+  --BackGroundMenu: rgba(34, 34, 34, 0.6);
+}
+
+/* !Body Content */
+.leftMenu {
+  --MenuPadding: 1rem 1rem;
+}
+
+.menu_Container {
+  max-width: 20rem;
+  min-height: 100vh;
+  position: relative;
+
+  background-color: var(--BackGroundMenu);
+  padding: var(--MenuPadding);
+  transition: max-width 0.5s ease;
+}
+
+/* !Main */
+/* Logo Section */
+.logoCotainer {
+  display: flex;
+  justify-content: center;
+}
+.logoCotainer .Logo {
+  max-width: 10rem;
+  transition: max-width 0.5s ease;
+}
+
+
+
+/* ?----Menu LIst---- */
+.menu_List {
+  margin-top: 1.5em;
+  overflow: hidden;
+  transition: opacity 0.5s ease, margin-top 0.5s ease;
+}
+
+/* Menu Text label Animation */
+.menu_List > p {
+  --border-radius: 15px;
+  --border-width: 4px;
+  color: #fff;
+  background-color: #212121;
+  font-family: "robBold";
+  font-size: 1.3rem; /* Adjust the sizes as needed */
+  margin-bottom: 1.5em;
+  border: 0;
+  border-radius: var(--border-radius);
+
+  appearance: none;
+  position: relative;
+  padding: 1em 0.5em;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.menu_List > p::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background-image: conic-gradient(
+    #488cfb,
+    #29dbbc,
+    #ddf505,
+    #ff9f0e,
+    #e440bb,
+    #655adc,
+    #488cfb
+  );
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate(0);
+  animation: rotate-hue linear 500ms infinite;
+}
+
+@keyframes rotate-hue {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+
+/* .menu_List > p::after {
+  box-sizing: border-box;
+} */
+
+/* Start Menu List pages */
+.menu_List > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.menu_List > ul li {
+  color: #848484;
+  font-family: "robBold";
+  padding: 0.5em 0;
+
+  position: relative;
+  display: flex;
+  gap: 0.6em;
+  cursor: pointer;
+  margin-inline: 0.3em;   
+  transition: all 0.3 ease;
+}
+.menu_List > ul li .linkColor {
+  color: #848484;
+}
+
+/* Before Animation */
+.menu_List ul li::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -17px;
+  width: 0px;
+  height: 100%;
+  background: #49e12e;
+  border-radius: 5px;
+  transition: all 0.3 ease;
+
+}
+
+.menu_List ul li:hover ,
+.menu_List ul li.active{
+  color: #f1f1f1;
+  transition: 0.3s ease;
+}
+
+.menu_List ul li:hover::before,
+.menu_List ul li.active::before {
+  width: 1.1rem;
+  transition:  width 0.5s ease;
+}
+
+/*? Toggle Button */
+.toggleSection {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  line-height: 2.5;
+  gap: 5rem;
+}
+.toggleSection > p {
+  color: white;
+  font-family: "robBold";
+  transition: all 0.3s ease;
+}
+.toggleButton {
+  color: white;
+  border: none;
+  border-radius: 50%;
+  background-color: #212121;
+  font-size: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: -0px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: rotate(90deg);
+}
+
+.leftMenu.collapsed {
+  width: 5rem;
+}
+.leftMenu.collapsed .menu_Container {
+  position: fixed;
+}
+
+.leftMenu.collapsed .toggleButton {
+  transform: rotate(-90deg);
+  left: 15%;
+}
+
+.leftMenu.collapsed .menu_List > ul li {
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.leftMenu.collapsed .logoCotainer .Logo {
+  justify-content: center;
+  max-width: 4rem;
+  margin-top: 4rem;
+}
+.leftMenu.collapsed .menu_List > ul li .linkColor,
+.leftMenu.collapsed .menu_List > ul li .nav-link,
+.leftMenu.collapsed .toggleSection > p {
+  display: none;
+}
+.leftMenu.collapsed .menu_List > p {
+  font-size: 1.1rem;
+}

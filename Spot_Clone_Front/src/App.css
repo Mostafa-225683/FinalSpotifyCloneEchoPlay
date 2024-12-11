@@ -1,0 +1,13 @@
+/* Global layout */
+.app {
+  display: flex;
+  gap: 3em;
+}
+
+/* Main content area */
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+

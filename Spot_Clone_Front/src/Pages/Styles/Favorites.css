@@ -1,0 +1,117 @@
+/* General Container */
+.favorites-container {
+  background-color: #121212;
+  color: #fff;
+  margin-top: -1em;
+  min-height: 100vh;
+  padding-inline: 2em;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header Section */
+.favorites-header {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin-top: 2em;
+  margin-bottom: 2rem;
+}
+
+.favorites-header-icon {
+  background-color: #1db954;
+  width: 3em;
+  height: 2.5em;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.favorites-header-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.favorites-header-details p {
+  color: #b3b3b3;
+  margin: 5px 0 0;
+}
+
+/* Song List Table */
+.favorites-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.favorites-table th,
+.favorites-table td {
+  text-align: left;
+  padding: 10px;
+}
+
+.favorites-table th {
+  color: #b3b3b3;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #282828;
+}
+
+.favorites-table td {
+  border-bottom: 1px solid #282828;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-title {
+  color: #fff;
+  margin: 0;
+}
+
+.song-artist {
+  color: #b3b3b3;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Remove Button */
+.remove-button {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.remove-button:hover {
+  color: #ff4c4c;
+}
+
+/* Playlist Background */
+.favorites-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorites-header-icon .fa-heart {
+  font-size: 3rem;
+}
+
+/* Hover Effects */
+.favorites-table tr:hover {
+  background-color: #282828;
+}
